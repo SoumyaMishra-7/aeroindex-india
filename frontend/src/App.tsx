@@ -6,6 +6,16 @@ import Dashboard from "./pages/Dashboard";
 import RoutesPage from "./pages/Routes";
 import Profile from "./pages/Profile";
 
+import AirfarePriceIndex from "./pages/AirfarePriceIndex/AirfarePriceIndex";
+import CPIComparison from "./pages/CPIComparison/CPIComparison";
+import FareData from "./pages/FareData/FareData";
+import AirlinesSources from "./pages/AirlinesSources/AirlinesSources";
+import DataCollection from "./pages/DataCollection/DataCollection";
+import ScrapingStatus from "./pages/ScrapingStatus/ScrapingStatus";
+import Analytics from "./pages/Analytics/Analytics";
+import Trends from "./pages/Trends/Trends";
+import ReportsExports from "./pages/ReportsExports/ReportsExports";
+
 import DashboardLayout from "./components/DashboardLayout";
 
 import Hero from "./components/landing/Hero";
@@ -20,9 +30,7 @@ import Progress from "./components/common/Progress";
 export default function App() {
   return (
     <Routes>
-      {/* =========================
-          LANDING PAGE
-      ========================== */}
+      {/* LANDING PAGE */}
       <Route
         path="/"
         element={
@@ -39,23 +47,34 @@ export default function App() {
         }
       />
 
-      {/* =========================
-          AUTH PAGES
-      ========================== */}
+      {/* AUTH */}
       <Route path="/signup" element={<Signup />} />
       <Route path="/signin" element={<Signin />} />
 
-      {/* =========================
-          DASHBOARD / APP PAGES
-      ========================== */}
+      {/* DASHBOARD LAYOUT */}
       <Route element={<DashboardLayout />}>
-        {/* Dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
 
-        {/* Routes */}
+        <Route path="/airfare-price-index" element={<AirfarePriceIndex />} />
+
+        <Route path="/cpi-comparison" element={<CPIComparison />} />
+
+        <Route path="/fare-data" element={<FareData />} />
+
         <Route path="/routes" element={<RoutesPage />} />
 
-        {/* Profile */}
+        <Route path="/airlines-sources" element={<AirlinesSources />} />
+
+        <Route path="/data-collection" element={<DataCollection />} />
+
+        <Route path="/scraping-status" element={<ScrapingStatus />} />
+
+        <Route path="/analytics" element={<Analytics />} />
+
+        <Route path="/trends" element={<Trends />} />
+
+        <Route path="/reports-exports" element={<ReportsExports />} />
+
         <Route path="/profile" element={<Profile />} />
       </Route>
     </Routes>
