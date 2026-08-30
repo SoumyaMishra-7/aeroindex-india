@@ -67,7 +67,7 @@ AeroIndex India follows a modular architecture that collects airfare data, proce
                     ┌──────────────────────────┐
                     │   APIx & INTELLIGENCE    │
                     │ Index Calculation        │
-                    │ Route Analytics           │
+                    │ Route Analytics          │
                     │ Confidence & CPI Checks  │
                     └────────────┬─────────────┘
                                  │
@@ -86,7 +86,7 @@ AeroIndex India follows a modular architecture that collects airfare data, proce
                                  │
                                  ▼
               ┌────────────────────────────────────┐
-              │          POLICY OUTPUTS             │
+              │          POLICY OUTPUTS            │
               │                                    │
               │  • National APIx                   │
               │  • Route Analytics                 │
