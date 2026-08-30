@@ -35,13 +35,13 @@ Insights are structured dictionaries generated from calculated index movement an
 ## Architecture
 
 ┌───────────────────────────────────────┐
-│          AIRLINE / OTA SOURCES       │
-│   Airlines • OTAs • APIs • Feeds     │
+│          AIRLINE / OTA SOURCES        │
+│   Airlines • OTAs • APIs • Feeds      │
 └───────────────────┬───────────────────┘
                     ↓
 ┌───────────────────────────────────────┐
 │         COLLECTION ADAPTERS           │
-│ Scrapy • Playwright • T+1 ... T+45   │
+│ Scrapy • Playwright • T+1 ... T+45    │
 └───────────────────┬───────────────────┘
                     ↓
 ┌───────────────────────────────────────┐
