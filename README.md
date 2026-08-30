@@ -32,57 +32,68 @@ Insights are structured dictionaries generated from calculated index movement an
 
 ![AeroIndex flowchart](images/dashboard.png)
 
-## Architecture
+## System Architecture
 
-┌───────────────────────────────────────┐
-│          AIRLINE / OTA SOURCES        │
-│   Airlines • OTAs • APIs • Feeds      │
-└───────────────────┬───────────────────┘
-                    ↓
-┌───────────────────────────────────────┐
-│         COLLECTION ADAPTERS           │
-│ Scrapy • Playwright • T+1 ... T+45    │
-└───────────────────┬───────────────────┘
-                    ↓
-┌───────────────────────────────────────┐
-│    VALIDATION & STANDARDIZATION       │
-│ Cleaning • Duplicates • Outliers      │
-└───────────────────┬───────────────────┘
-                    ↓
-┌───────────────────────────────────────┐
-│          POSTGRESQL DATABASE          │
-│ Routes • Fares • Weights • Sources    │
-│ Runs • Releases • Historical Data     │
-└───────────────┬───────────┬───────────┘
-                │           │
-                ↓           ↓
-┌─────────────────────┐  ┌─────────────────────┐
-│ APIx & INTELLIGENCE │  │   FASTAPI BACKEND   │
-│                     │  │                     │
-│ Index Calculation   │  │ REST APIs           │
-│ Route Analytics     │  │ Data Services       │
-│ Confidence          │  │ Analytics APIs      │
-│ CPI Readiness       │  │ Evidence Pack API   │
-└──────────┬──────────┘  └──────────┬──────────┘
-           │                         │
-           └────────────┬────────────┘
-                        ↓
-          ┌──────────────────────────┐
-          │   REACT FRONTEND         │
-          │                          │
-          │ National Dashboard       │
-          │ Route Analytics          │
-          │ Booking Windows          │
-          │ Confidence & CPI Status  │
-          └────────────┬─────────────┘
-                       ↓
-        ┌──────────────────────────────┐
-        │      POLICY OUTPUTS          │
-        │                              │
-        │ MoSPI Dashboard              │
-        │ CPI Evidence Pack            │
-        │ Reports / Machine APIs       │
-        └──────────────────────────────┘
+AeroIndex India follows a modular architecture that collects airfare data, processes and validates it, calculates the Airfare Price Index (APIx), and presents the results through a policy-focused dashboard.
+
+
+                    ┌──────────────────────────┐
+                    │     AIRLINE / OTA        │
+                    │     DATA SOURCES         │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │    DATA COLLECTION       │
+                    │  Source Adapters         │
+                    │  T+1 ... T+45 Windows    │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │ VALIDATION & STANDARDIZE │
+                    │ Cleaning • Duplicates    │
+                    │ Outliers • Normalization │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │     POSTGRESQL DB        │
+                    │ Routes • Fares • Weights │
+                    │ Sources • History        │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │   APIx & INTELLIGENCE    │
+                    │ Index Calculation        │
+                    │ Route Analytics           │
+                    │ Confidence & CPI Checks  │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+                    ┌──────────────────────────┐
+                    │      FASTAPI BACKEND     │
+                    │       REST APIs          │
+                    └────────────┬─────────────┘
+                                 │
+                                 │ JSON / REST
+                                 ▼
+                    ┌──────────────────────────┐
+                    │    REACT FRONTEND        │
+                    │  Dashboard & Analytics   │
+                    └────────────┬─────────────┘
+                                 │
+                                 ▼
+              ┌────────────────────────────────────┐
+              │          POLICY OUTPUTS             │
+              │                                    │
+              │  • National APIx                   │
+              │  • Route Analytics                 │
+              │  • Booking Window Intelligence     │
+              │  • Confidence / CPI Readiness      │
+              │  • CPI Evidence Pack               │
+              └────────────────────────────────────┘
 
 ## Run
 
