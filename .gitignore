@@ -22,3 +22,26 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Runtime, databases, environments, and caches
+*.db
+*.sqlite
+*.sqlite3
+.env
+.env.local
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+ENV/
+build/
+.npm/
+
+# Agent scratch and temporary artifacts
+scratch/
+.tempmediaStorage/
+*.xlsx
