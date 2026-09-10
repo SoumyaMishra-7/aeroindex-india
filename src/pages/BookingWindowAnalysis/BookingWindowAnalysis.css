@@ -1,0 +1,1373 @@
+/* =========================================================
+
+   BOOKING WINDOW ANALYSIS
+
+   Government Airfare Price Index Dashboard
+
+========================================================= */
+
+.booking-page {
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 32px;
+
+  box-sizing: border-box;
+
+}
+
+/* =========================================================
+
+   PAGE HEADER
+
+========================================================= */
+
+.page-heading {
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 28px;
+
+}
+
+.heading-content {
+
+  min-width: 0;
+
+}
+
+.eyebrow,
+
+.card-label {
+
+  margin: 0 0 8px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  color: #64748b;
+
+}
+
+.page-heading h1 {
+
+  margin: 0;
+
+  font-size: 32px;
+
+  line-height: 1.2;
+
+  color: #0f172a;
+
+}
+
+.page-description {
+
+  margin: 10px 0 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+}
+
+/* =========================================================
+
+   HEADER CONTROLS
+
+   DATE RANGE + ROUTE
+
+========================================================= */
+
+.heading-controls {
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+
+}
+
+/* Date Range */
+
+.heading-controls .date-range-selector {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  gap: 7px;
+
+  width: 200px;
+
+  height: 65px;
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+/* Route */
+
+.heading-controls .route-selector {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  gap: 7px;
+
+  width: 200px;
+
+  height: 65px;
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+/* Both labels */
+
+.heading-controls .date-range-selector label,
+
+.heading-controls .route-selector label {
+
+  display: block;
+
+  height: 14px;
+
+  min-height: 14px;
+
+  margin: 0;
+
+  padding: 0;
+
+  font-size: 11px;
+
+  line-height: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  color: #64748b;
+
+}
+
+/* Date dropdown */
+
+.heading-controls .date-range-selector select {
+
+  display: block;
+
+  width: 200px;
+
+  height: 44px;
+
+  min-height: 44px;
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0 14px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font-size: 14px;
+
+  line-height: 44px;
+
+  outline: none;
+
+  cursor: pointer;
+
+}
+
+/* Route wrapper */
+
+.heading-controls .route-selector .select-wrapper {
+
+  position: relative;
+
+  width: 200px;
+
+  height: 44px;
+
+  min-height: 44px;
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+/* Route dropdown */
+.heading-controls .route-selector .select-wrapper select {
+
+  display: block;
+
+  width: 200px;
+
+  height: 44px;
+
+  min-height: 44px;
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0 40px 0 14px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #0f172a;
+
+  font-size: 14px;
+
+  line-height: 44px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  /* Remove browser's default dropdown arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+/* Route arrow */
+.heading-controls .route-selector .select-wrapper svg {
+
+  position: absolute;
+
+  right: 12px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color:  #0f172a;
+
+  pointer-events: none;
+
+}
+
+
+/* Focus */
+.heading-controls .date-range-selector select:focus,
+
+.heading-controls .route-selector .select-wrapper select:focus {
+
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px #dbeafe;
+
+}
+
+/* =========================================================
+
+   KPI CARDS
+
+========================================================= */
+
+.kpi-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 24px;
+
+}
+
+.kpi-card {
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.kpi-card:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+
+}
+
+.kpi-card span {
+
+  display: block;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  color: #64748b;
+
+}
+
+.kpi-card strong {
+
+  display: block;
+
+  margin-top: 10px;
+
+  font-size: 25px;
+
+  color: #0f172a;
+
+}
+
+.kpi-card small {
+
+  display: block;
+
+  margin-top: 6px;
+
+  color: #94a3b8;
+
+  font-size: 12px;
+
+}
+
+.kpi-card.highlight {
+
+  background: #eff6ff;
+
+  border-color: #bfdbfe;
+
+}
+
+.kpi-card.highlight strong {
+
+  color: #2563eb;
+
+}
+
+/* =========================================================
+
+   MAIN VISUAL ANALYSIS
+
+   50% LINE CHART + 50% FARE COMPOSITION
+
+========================================================= */
+
+.visual-analysis {
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  gap: 24px;
+
+  width: 100%;
+
+  margin-top: 24px;
+
+  align-items: stretch;
+
+}
+
+.analysis-card {
+
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+}
+
+/* =========================================================
+
+   LINE CHART
+
+========================================================= */
+
+.chart-panel {
+
+  min-width: 0;
+
+}
+
+.chart-container {
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 24px;
+
+  margin: 0;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  border-radius: 0;
+
+  background: transparent;
+
+}
+
+.chart-header h2 {
+
+  margin: 0;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+
+  color: #0f172a;
+
+}
+
+.chart-header p {
+
+  margin: 6px 0 0;
+
+  font-size: 13px;
+
+  color: #64748b;
+
+}
+
+.chart {
+
+  width: 100%;
+
+  height: 360px;
+
+  margin-top: 20px;
+
+}
+
+/* =========================================================
+
+   FARE COMPOSITION
+
+========================================================= */
+
+.fare-panel {
+
+  min-width: 0;
+
+}
+
+.fare-card {
+
+  width: 100%;
+
+  height: 100%;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+}
+
+.fare-card h2 {
+
+  margin: 8px 0 0;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+
+  color: #0f172a;
+
+}
+
+.fare-description {
+
+  margin: 6px 0 0;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #94a3b8;
+
+}
+
+/* =========================================================
+
+   DONUT + FARE BREAKDOWN
+
+========================================================= */
+
+.fare-composition-layout {
+
+  display: grid;
+
+  grid-template-columns: minmax(220px, 1fr) minmax(180px, 1fr);
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 18px;
+
+}
+
+.fare-donut {
+
+  width: 100%;
+
+  min-width: 0;
+
+  height: 280px;
+
+}
+
+.fare-donut svg {
+
+  overflow: visible;
+
+}
+
+/* =========================================================
+
+   DONUT CENTER
+
+========================================================= */
+
+.donut-total-label {
+
+  fill: #94a3b8;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+}
+
+.donut-total-value {
+
+  fill: #0f172a;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+}
+
+/* =========================================================
+
+   FARE BREAKDOWN
+
+========================================================= */
+
+.fare-breakdown {
+
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+
+  gap: 4px;
+
+}
+
+.fare-breakdown-item {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #f1f5f9;
+
+}
+
+.fare-breakdown-item:last-child {
+
+  border-bottom: none;
+
+}
+
+.fare-item-info {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+
+}
+
+.fare-color-dot {
+
+  width: 10px;
+
+  height: 10px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+}
+
+.fare-item-info > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+
+}
+
+.fare-item-name {
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #334155;
+
+}
+
+.fare-item-info small {
+
+  font-size: 11px;
+
+  color: #94a3b8;
+
+}
+
+.fare-item-value {
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #0f172a;
+
+  white-space: nowrap;
+
+}
+
+/* =========================================================
+
+   BOOKING WINDOW INSIGHTS
+
+========================================================= */
+
+.window-section {
+
+  margin-top: 32px;
+
+}
+
+.section-heading {
+
+  margin-bottom: 16px;
+
+}
+
+.section-heading h2 {
+
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #0f172a;
+
+}
+
+.section-heading p {
+
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+}
+
+.window-insight-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 14px;
+
+}
+
+.window-insight-card {
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.window-insight-card:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+
+}
+
+.window-card-header {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+}
+
+.window-label {
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  color: #0f172a;
+
+}
+
+.window-card-header p {
+
+  margin: 4px 0 0;
+
+  font-size: 12px;
+
+  color: #94a3b8;
+
+}
+
+.window-trend {
+
+  width: 32px;
+
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+}
+
+.window-trend.trend-up {
+
+  background: #fef2f2;
+
+  color: #dc2626;
+
+}
+
+.window-trend.trend-down {
+
+  background: #f0fdf4;
+
+  color: #16a34a;
+
+}
+
+.window-fare {
+
+  margin-top: 20px;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #0f172a;
+
+}
+
+.window-comparison {
+
+  display: inline-block;
+
+  margin-top: 8px;
+
+  padding: 4px 7px;
+
+  border-radius: 5px;
+
+  background: #fef2f2;
+
+  color: #dc2626;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+}
+
+.window-insight {
+
+  margin-top: 16px;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+
+  color: #64748b;
+
+}
+
+/* =========================================================
+
+   MARKET INDICATORS
+
+   FOUR INDIVIDUAL HORIZONTAL CARDS
+
+========================================================= */
+
+.market-section {
+
+  margin-top: 32px;
+
+}
+
+.market-indicator-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+}
+
+/* =========================================================
+
+   MARKET INDICATOR CARD
+
+========================================================= */
+
+.market-indicator-card {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  min-width: 0;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  transition:
+
+    transform 0.2s ease,
+
+    box-shadow 0.2s ease;
+
+}
+
+.market-indicator-card:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+
+}
+
+/* =========================================================
+
+   MARKET INDICATOR ICONS
+
+========================================================= */
+
+.market-icon {
+
+  width: 38px;
+
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 9px;
+
+}
+
+.confidence-icon {
+
+  background: #ecfdf5;
+
+  color: #059669;
+
+}
+
+.premium-icon {
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+}
+
+.elasticity-icon {
+
+  background: #fff7ed;
+
+  color: #ea580c;
+
+}
+
+/* BOOKING PRESSURE ICON */
+
+.pressure-icon {
+
+  background: #f5f3ff;
+
+  color: #7c3aed;
+
+}
+
+/* =========================================================
+
+   MARKET INDICATOR CONTENT
+
+========================================================= */
+
+.market-indicator-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 0;
+
+}
+
+.market-indicator-content span {
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  color: #64748b;
+
+}
+
+.market-indicator-content strong {
+
+  font-size: 24px;
+
+  line-height: 1.2;
+
+  color: #0f172a;
+
+}
+
+.market-indicator-content small {
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+  color: #94a3b8;
+
+}
+
+/* =========================================================
+
+   RESPONSIVE - TABLET
+
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .kpi-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  }
+
+  .window-insight-grid {
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  }
+
+  .market-indicator-grid {
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  }
+
+  .fare-composition-layout {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .fare-donut {
+
+    max-width: 320px;
+
+    margin: 0 auto;
+
+  }
+
+}
+
+/* =========================================================
+
+   RESPONSIVE - SMALL TABLET
+
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .visual-analysis {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .fare-composition-layout {
+
+    grid-template-columns:
+
+      minmax(220px, 1fr)
+
+      minmax(180px, 1fr);
+
+  }
+
+  .fare-donut {
+
+    max-width: none;
+
+  }
+
+  .market-indicator-grid {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  }
+
+}
+
+/* =========================================================
+
+   RESPONSIVE - MOBILE
+
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .booking-page {
+
+    padding: 20px;
+
+  }
+
+  .page-heading {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 16px;
+
+  }
+
+  .page-heading h1 {
+
+    font-size: 26px;
+
+  }
+
+  .page-description {
+
+    font-size: 14px;
+
+  }
+
+  /* Header controls */
+
+  .heading-controls {
+
+    width: 100%;
+
+    justify-content: flex-start;
+
+    align-items: flex-end;
+
+  }
+
+  .heading-controls .date-range-selector,
+
+  .heading-controls .route-selector {
+
+    width: 100%;
+
+    height: 65px;
+
+  }
+
+  .heading-controls .date-range-selector select,
+
+  .heading-controls .route-selector .select-wrapper,
+
+  .heading-controls .route-selector .select-wrapper select {
+
+    width: 100%;
+
+  }
+
+  /* KPI */
+
+  .kpi-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  /* Insights */
+
+  .window-insight-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  /* Market indicators */
+
+  .market-indicator-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .chart-container,
+
+  .fare-card {
+
+    padding: 18px;
+
+  }
+
+  .chart {
+
+    height: 300px;
+
+  }
+
+  .fare-composition-layout {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .fare-donut {
+
+    max-width: 300px;
+
+    height: 260px;
+
+    margin: 0 auto;
+
+  }
+
+}
+
+/* =========================================================
+
+   RESPONSIVE - VERY SMALL SCREENS
+
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .booking-page {
+
+    padding: 14px;
+
+  }
+
+  .page-heading h1 {
+
+    font-size: 23px;
+
+  }
+
+  .heading-controls {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+  }
+
+  .heading-controls .date-range-selector,
+
+  .heading-controls .route-selector {
+
+    width: 100%;
+
+    height: 65px;
+
+  }
+
+  .heading-controls .date-range-selector select,
+
+  .heading-controls .route-selector .select-wrapper,
+
+  .heading-controls .route-selector .select-wrapper select {
+
+    width: 100%;
+
+  }
+
+  .kpi-card {
+
+    padding: 16px;
+
+  }
+
+  .window-insight-card {
+
+    padding: 16px;
+
+  }
+
+  .market-indicator-card {
+
+    padding: 16px;
+
+  }
+
+  .fare-breakdown-item {
+
+    padding: 10px 0;
+
+  }
+
+  .fare-item-name {
+
+    font-size: 11px;
+
+  }
+
+  .fare-item-value {
+
+    font-size: 12px;
+
+  }
+
+}
